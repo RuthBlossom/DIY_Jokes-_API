@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>😂</text></svg>") 16 0, auto;
+}
+
+
+
+.header {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 6rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-align: center;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    background-color: #1d1f20;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 10s infinite linear;
+    margin-top: 20px; /* Adjust this value to increase or decrease the space above the header */
+}
+
+
+@-webkit-keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
+
+.main-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.card {
+    width: 500px;
+    height: 634px;
+    --border-radius: 30px;
+    --border-width: 4px;
+    appearance: none;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2.5em 5em;
+    border: 0;
+    background: black;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 2;
+    border-radius: 30px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(
+            #488cfb,
+            #29dbbc,
+            #ddf505,
+            #ff9f0e,
+            #e440bb,
+            #655adc,
+            #488cfb
+    );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: paused;
+}
+
+.card:hover::after {
+    animation-play-state: running;
+}
+
+@keyframes rotate-hue {
+    to {
+        filter: hue-rotate(1turn);
+    }
+}
+
+.card,
+.card::after {
+    box-sizing: border-box;
+}
+
+@keyframes wobbleEmoji {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    15%, 45%, 75% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+    30%, 60% {
+        transform: translateX(5px) rotate(5deg);
+    }
+}
+
+.card .emoji {
+    font-size: 72px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+    animation: wobbleEmoji 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(79, 207, 112, 0.7));
+}
+
+.codepen-button {
+    --border-radius: 15px;
+    --border-width: 4px;
+    appearance: none;
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    padding: 0.8em 1.8em;
+    border: 0;
+    background-color: black;
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 2;
+}
+
+.codepen-button::after {
+    content: "";
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(
+            #488cfb,
+            #29dbbc,
+            #ddf505,
+            #ff9f0e,
+            #e440bb,
+            #655adc,
+            #488cfb
+    );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: paused;
+}
+
+.codepen-button:hover::after {
+    animation-play-state: running;
+}
+
+.codepen-button,
+.codepen-button::after {
+    box-sizing: border-box;
+}
+
+.codepen-button:active {
+    --border-width: 5px;
+}
+
+.footer {
+    background: linear-gradient(115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+    background-size: 200% 200%;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-weight: bold;
+    animation: gradientAnimation 10s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.footer p {
+    display: inline-block;
+    margin: 0;
+}
+
+.footer p span {
+    /* No animation needed */
+}
+
+
+
+
+
